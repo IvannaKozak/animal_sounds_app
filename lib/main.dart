@@ -10,8 +10,10 @@ class RainbowApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         appBarTheme: AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 96, 249, 0),
-        ),
+            elevation: 0.0,
+            backgroundColor: Color.fromARGB(
+                255, 216, 255, 60) //Color.fromARGB(255, 96, 249, 0),
+            ),
         scaffoldBackgroundColor: Colors.white,
       ), // Define the default brightness and colors
       home: MainPage(),

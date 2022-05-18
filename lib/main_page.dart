@@ -18,7 +18,17 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Rainbow Colors'),
+          title: Align(
+            alignment: Alignment.center,
+            child: Text(
+              'Animal sounds',
+              style: TextStyle(
+                  color: Color.fromARGB(255, 9, 13, 73),
+                  fontFamily: 'Monospace',
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 3.0),
+            ),
+          ),
         ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +41,7 @@ class _MainPageState extends State<MainPage> {
                   children: <Widget>[
                     Expanded(
                         child: RainbowButton(
-                      backgroundImage: AssetImage('images/bird.jpg'),
+                      animalImage: AssetImage('images/bird.jpg'),
                       text: 'Bird',
                       colour: Colors.red,
                       onClicked: () {
@@ -41,6 +51,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
+                      animalImage: AssetImage('images/bird.jpg'),
                       text: 'Cat',
                       colour: Colors.orange,
                       onClicked: () {
@@ -50,6 +61,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
+                      animalImage: AssetImage('images/bird.jpg'),
                       text: 'Dog',
                       colour: Colors.yellow,
                       onClicked: () {
@@ -65,6 +77,7 @@ class _MainPageState extends State<MainPage> {
                   children: <Widget>[
                     Expanded(
                         child: RainbowButton(
+                      animalImage: AssetImage('images/bird.jpg'),
                       text: 'Horse',
                       colour: Colors.green,
                       onClicked: () {
@@ -74,6 +87,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
+                      animalImage: AssetImage('images/bird.jpg'),
                       text: 'Lion',
                       colour: Colors.blue,
                       onClicked: () {
@@ -83,6 +97,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
+                      animalImage: AssetImage('images/bird.jpg'),
                       text: 'Wild beast',
                       colour: Colors.purple,
                       onClicked: () {
@@ -101,22 +116,23 @@ const kMainTextStyle = TextStyle(fontSize: 20.0, color: Colors.white);
 
 class RainbowButton extends StatelessWidget {
   RainbowButton(
-      {this.onClicked, this.text, this.colour, AssetImage backgroundImage});
+      {@required this.onClicked, this.text, this.colour, this.animalImage});
   final Function onClicked;
   final String text;
   final Color colour;
+  final AssetImage animalImage;
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
       elevation: 0.0,
-      child: Text(
-        text,
-        style: kMainTextStyle,
+      child: CircleAvatar(
+        radius: 90.0,
+        backgroundImage: animalImage,
       ),
       onPressed: onClicked,
       //shape: CircleBorder(),
-      fillColor: colour,
+      fillColor: Color.fromARGB(255, 216, 255, 60),
     );
   }
 }
