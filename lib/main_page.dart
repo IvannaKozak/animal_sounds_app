@@ -51,7 +51,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
-                      animalImage: AssetImage('images/bird.jpg'),
+                      animalImage: AssetImage('images/cat.jpg'),
                       text: 'Cat',
                       colour: Colors.orange,
                       onClicked: () {
@@ -61,7 +61,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
-                      animalImage: AssetImage('images/bird.jpg'),
+                      animalImage: AssetImage('images/dog.jpg'),
                       text: 'Dog',
                       colour: Colors.yellow,
                       onClicked: () {
@@ -77,7 +77,7 @@ class _MainPageState extends State<MainPage> {
                   children: <Widget>[
                     Expanded(
                         child: RainbowButton(
-                      animalImage: AssetImage('images/bird.jpg'),
+                      animalImage: AssetImage('images/horse.jpg'),
                       text: 'Horse',
                       colour: Colors.green,
                       onClicked: () {
@@ -87,7 +87,7 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
-                      animalImage: AssetImage('images/bird.jpg'),
+                      animalImage: AssetImage('images/lion.jpg'),
                       text: 'Lion',
                       colour: Colors.blue,
                       onClicked: () {
@@ -97,11 +97,11 @@ class _MainPageState extends State<MainPage> {
                     )),
                     Expanded(
                         child: RainbowButton(
-                      animalImage: AssetImage('images/bird.jpg'),
+                      animalImage: AssetImage('images/wolf.jpg'),
                       text: 'Wild beast',
                       colour: Colors.purple,
                       onClicked: () {
-                        playSound('wild_beast.wav');
+                        playSound('wolf.wav');
                         setState(() {});
                       },
                     )),
