@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main_page.dart';
+import 'second_page.dart';
 
 void main() => runApp(RainbowApp());
 
@@ -17,6 +18,10 @@ class RainbowApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ), // Define the default brightness and colors
       home: MainPage(),
+      routes: {
+        //'/': (context) => InputPage(),
+        '/results': (context) => SecondPage(),
+      },
     );
   }
 }

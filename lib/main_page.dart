@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'constants.dart';
+import 'second_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -13,12 +14,11 @@ class _MainPageState extends State<MainPage> {
     player.play('$soundName');
   }
 
-  Color mainColor =
-      Color.fromARGB(255, 238, 211, 234); //Color.fromARGB(255, 215, 209, 150);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Align(
             alignment: Alignment.center,
             child: Text(
@@ -120,7 +120,14 @@ class _MainPageState extends State<MainPage> {
               flex: 1,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.blue),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SecondPage(),
+                      ),
+                    );
+                  },
                   child: Text(
                     'Next',
                     style: kNextTextStyle,
