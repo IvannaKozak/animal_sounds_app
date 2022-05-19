@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'constants.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -30,83 +31,101 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.alphabetic,
-          children: <Widget>[
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
             Expanded(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Expanded(
-                        child: RainbowButton(
-                      animalImage: AssetImage('images/bird.jpg'),
-                      text: 'Bird',
-                      colour: Colors.red,
-                      onClicked: () {
-                        playSound('bird.wav');
-                        setState(() {});
-                      },
-                    )),
-                    Expanded(
-                        child: RainbowButton(
-                      animalImage: AssetImage('images/cat.jpg'),
-                      text: 'Cat',
-                      colour: Colors.orange,
-                      onClicked: () {
-                        playSound('cat.wav');
-                        setState(() {});
-                      },
-                    )),
-                    Expanded(
-                        child: RainbowButton(
-                      animalImage: AssetImage('images/dog.jpg'),
-                      text: 'Dog',
-                      colour: Colors.yellow,
-                      onClicked: () {
-                        playSound('dog.wav');
-                        setState(() {});
-                      },
-                    )),
-                  ]),
+              flex: 8,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: <Widget>[
+                  Expanded(
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          Expanded(
+                              child: RainbowButton(
+                            animalImage: AssetImage('images/bird.jpg'),
+                            text: 'Bird',
+                            colour: Colors.red,
+                            onClicked: () {
+                              playSound('bird.wav');
+                              setState(() {});
+                            },
+                          )),
+                          Expanded(
+                              child: RainbowButton(
+                            animalImage: AssetImage('images/cat.jpg'),
+                            text: 'Cat',
+                            colour: Colors.orange,
+                            onClicked: () {
+                              playSound('cat.wav');
+                              setState(() {});
+                            },
+                          )),
+                          Expanded(
+                              child: RainbowButton(
+                            animalImage: AssetImage('images/dog.jpg'),
+                            text: 'Dog',
+                            colour: Colors.yellow,
+                            onClicked: () {
+                              playSound('dog.wav');
+                              setState(() {});
+                            },
+                          )),
+                        ]),
+                  ),
+                  Expanded(
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: <Widget>[
+                          Expanded(
+                              child: RainbowButton(
+                            animalImage: AssetImage('images/horse.jpg'),
+                            text: 'Horse',
+                            colour: Colors.green,
+                            onClicked: () {
+                              playSound('horse.wav');
+                              setState(() {});
+                            },
+                          )),
+                          Expanded(
+                              child: RainbowButton(
+                            animalImage: AssetImage('images/lion.jpg'),
+                            text: 'Lion',
+                            colour: Colors.blue,
+                            onClicked: () {
+                              playSound('lion.wav');
+                              setState(() {});
+                            },
+                          )),
+                          Expanded(
+                              child: RainbowButton(
+                            animalImage: AssetImage('images/wolf.jpg'),
+                            text: 'Wild beast',
+                            colour: Colors.purple,
+                            onClicked: () {
+                              playSound('wolf.wav');
+                              setState(() {});
+                            },
+                          )),
+                        ]),
+                  ),
+                ],
+              ),
             ),
             Expanded(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Expanded(
-                        child: RainbowButton(
-                      animalImage: AssetImage('images/horse.jpg'),
-                      text: 'Horse',
-                      colour: Colors.green,
-                      onClicked: () {
-                        playSound('horse.wav');
-                        setState(() {});
-                      },
-                    )),
-                    Expanded(
-                        child: RainbowButton(
-                      animalImage: AssetImage('images/lion.jpg'),
-                      text: 'Lion',
-                      colour: Colors.blue,
-                      onClicked: () {
-                        playSound('lion.wav');
-                        setState(() {});
-                      },
-                    )),
-                    Expanded(
-                        child: RainbowButton(
-                      animalImage: AssetImage('images/wolf.jpg'),
-                      text: 'Wild beast',
-                      colour: Colors.purple,
-                      onClicked: () {
-                        playSound('wolf.wav');
-                        setState(() {});
-                      },
-                    )),
-                  ]),
-            ),
+              flex: 1,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.blue),
+                  onPressed: () {},
+                  child: Text(
+                    'Next',
+                    style: kNextTextStyle,
+                  )),
+            )
           ],
         ));
   }
